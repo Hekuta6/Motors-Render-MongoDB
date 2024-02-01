@@ -1,0 +1,292 @@
+/******* Root and Fonts ***************/
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --drk-gray: #272727;
+  --white: #ffffff;
+  --blue: #005c79;
+  --blue-hover: #005c79;
+}
+
+/******* Change Box Model ***************/
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/******* ALL ***************/
+body {
+  border: 5px solid #000000;
+  margin: 5px;
+  padding: 5px;
+}
+
+.header {
+  font-family: 'Catamaran', sans-serif;
+  color: var(--drk-gray);
+  margin-bottom: 10px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.list-ul {
+  font-family: 'Open Sans', sans-serif;
+  list-style-type: none;
+}
+
+.section-container {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.tools:hover {
+  color: var(--blue);
+}
+
+.button {
+  height: auto;
+  width: auto;
+  padding: 8px;
+  text-align: center;
+  font-family: 'Catamaran', sans-serif;
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
+  border-radius: 8px;
+  color: black;
+  font-weight: 700;
+}
+
+.button:hover {
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--blue-hover);
+  border: 2px solid var(--blue-hover);
+}
+
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/******* Header ***************/
+#top-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 12vh;
+  margin-top: 2%;
+}
+
+.siteName {
+  font-size: 28px;
+}
+
+.my-account {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+.siteName,
+.tools {
+  text-decoration: none;
+  color: var(--drk-gray);
+}
+
+
+/******* Navigation ***************/
+nav {
+  background-color: var(--drk-gray);
+  /*
+  color: var(--white);
+  text-decoration: none;
+  list-style: none;
+  font-size: 16px;
+  font-weight: 800; */
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+nav ul li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+nav ul li a:hover {
+  color: var(--blue);
+}
+
+/******* Main ***************/
+.header__welcome {
+  font-size: 20px;
+  font-family: 'Catamaran', sans-serif;
+  color: var(--drk-gray);
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.hero__description_box {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgb(0, 0, 0);
+  width: 50%;
+  padding: 1%;
+  margin-top: 2%;
+  font-weight: 700;
+}
+
+#dmc-delorean {
+  font-size: 18px;
+  font-family: 'Catamaran', sans-serif;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+/* .header__dmc-delorean {
+  color: black;
+} */
+
+/* Side by side */
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.upgrades,
+.reviews {
+  width: 48%;
+}
+
+.section-container {
+  box-sizing: border-box;
+}
+
+.upgrades {
+  width: 100%;
+}
+
+.upgrades ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.upgrades li {
+  width: 48%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.image-upgrades img {
+  border: 6px solid var(--blue);
+  /* Adjust border properties as needed */
+}
+
+/******************** inv display ***************************/
+#inv-display {
+  text-align: center;
+  margin: auto;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#inv-display li {
+  justify-self: center;
+  width: 350px;
+  border: 3px solid var(--blue-hover);
+  list-style: none;
+}
+
+.namePrice h2 {
+  margin: auto;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+#inv-display li a {
+  text-decoration: none;
+  color: var(--drk-gray);
+}
+
+/************************ detail-grid **************************/
+
+
+#detail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+#detail-grid table td {
+  background-color: rgb(185, 183, 183);
+  padding: 3px;
+  font-size: larger;
+}
+
+#detail-grid table {
+  flex: 1 1 250px;
+  max-width: 100%;
+  margin-top: 0;
+}
+
+#detail-grid table tbody tr td:first-child {
+  font-weight: 500;
+  vertical-align: top;
+  background-color: #413f3f;
+  color: #ffffff;
+}
+
+#detail-grid img {
+  flex: 0 0 auto;
+  max-width: 100%;
+  margin-right: 10px;
+}
+
+/********************** class="funny-error-404" **********/
+
+.funny-error-404 {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 10px;
+  padding: 10px;
+}
+
+
+
+/******* Footer ***************/
+.copyright {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 768px) {
+
+  .side-by-side {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #inv-display {
+    display: flex;
+    flex-direction: column;
+  }
+}
