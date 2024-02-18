@@ -262,6 +262,48 @@ nav ul li a:hover {
   margin-right: 10px;
 }
 
+/*************************** review grid *******************/
+.review-grid {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.review-login {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: solid 3px var(--blue);
+  justify-content: space-around;
+  font-size: large;
+}
+
+/********** update & delete review *********/
+.update-review,
+.review-delete {
+  display: flex;
+  flex-direction: column;
+  border: solid 2px var(--blue);
+  margin: auto;
+  width: 600px;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: large;
+}
+
+/* review account */
+.review-account,
+.review-inv {
+  display: flex;
+  flex-direction: column;
+  border: solid 2px var(--blue);
+  margin: auto;
+  width: 600px;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: medium;
+}
+
 /********************** class="funny-error-404" **********/
 
 .funny-error-404 {
@@ -273,7 +315,7 @@ nav ul li a:hover {
 
 /************************** Login **************************/
 
-#login_form {
+#loginForm {
   background-color: var(--blue);
   border: solid 2px var(--drk-gray);
   border-radius: 8px;
@@ -285,11 +327,11 @@ nav ul li a:hover {
   margin: auto;
 }
 
-#login_form input {
+#loginForm input {
   line-height: 2em;
 }
 
-#login_form button {
+#loginForm button {
   color: black;
   margin-top: .5em;
   margin-bottom: .5em;
@@ -305,6 +347,25 @@ nav ul li a:hover {
 #signup a {
   color: black;
 }
+
+/********************** Account Management *******************/
+.account-welcome {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/***************** updateForm **************/
+#accountUpdate,
+#changePassword {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 5px;
+  padding: 5px;
+  max-width: 600px;
+  border: solid 3px var(--blue);
+}
+
 
 /***** styles for valid form input *****/
 input:required:invalid,
@@ -457,6 +518,36 @@ form textarea {
   background-color: rgba(0, 0, 0, 0.1);
   font-size: 18px;
 }
+
+/************************** manage-Inventory ************/
+
+#manage-Inventory {
+  list-style: none;
+  border: solid 2px var(--drk-gray);
+  padding: 5px;
+  margin: auto;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 600px;
+  font-size: large;
+  background-color: #44bce0;
+}
+
+
+/************************ updateForm and deleteForm ******************/
+#updateForm,
+#deleteForm {
+  display: flex;
+  flex-direction: column;
+  border: solid 2px var(--drk-gray);
+  margin: auto;
+  width: 600px;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: large;
+}
+
+
 
 /******* Footer ***************/
 .copyright {

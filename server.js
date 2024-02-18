@@ -6,8 +6,6 @@
 /* ***********************
  * Require Statements
  *************************/
-const session = require("express-session")
-const pool = require('./database/')
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
@@ -17,7 +15,10 @@ const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const accountRoute = require("./routes/accountRoute")
 const utilities = require('./utilities/')
+const session = require("express-session")
+const pool = require('./database/')
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 
 
 /* ***********************
@@ -34,7 +35,7 @@ app.use(session({
   name: 'sessionId',
 }))
 
-// Express Messages Middleware
+//Express Messages Middleware
 app.use(require('connect-flash')())
 app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res)
@@ -42,8 +43,14 @@ app.use(function (req, res, next) {
 })
 
 
+//body parser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
+
+// cookie Parser
+app.use(cookieParser());
+app.use(utilities.checkJWTToken)
 
 
 /* ***********************
@@ -53,10 +60,11 @@ app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout") // not at vies root
 
+
 /* ***********************
  * Routes
  *************************/
-app.use(static)
+app.use(utilities.handleErrors(static))
 
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))
@@ -65,10 +73,11 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 // })
 
 // Inventory routes
-app.use("/inv", inventoryRoute)
+app.use("/inv", utilities.handleErrors(inventoryRoute))
 
 // Account Route
 app.use("/account", utilities.handleErrors(accountRoute))
+
 
 
 // File Not Found Route - must be last route in list

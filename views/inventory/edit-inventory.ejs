@@ -1,4 +1,4 @@
-<!-- Content Heading -->
+<!--  -->
 <h1>
     <%= title %>
 </h1>
@@ -15,12 +15,13 @@
         </ul>
         <% } %>
 
-            <!-- Add Vehicle Display-->
-            <form class="addVehicle" action="/inv/add-inventory" method="post">
-                <%- selectList %>
+
+            <form id="updateForm" action="/inv/update" method="post">
+
+                <%- classificationSelect %>
+
                     <label for="inv_make">Make:</label>
-                    <input type="text" id="inv_make" name="inv_make" required pattern="[^' ']+[a-zA-Z]"
-                        value="<%= locals.inv_make %>">
+                    <input type="text" id="inv_make" name="inv_make" required value="<%= locals.inv_make %>">
 
                     <label for="inv_model">Model:</label>
                     <input type="text" id="inv_model" name="inv_model" required value="<%= locals.inv_model %>">
@@ -52,5 +53,9 @@
                     <input type="text" id="inv_thumbnail" name="inv_thumbnail" required
                         value="<%= locals.inv_thumbnail ? locals.inv_thumbnail : '/images/vehicles/no-image-tn.png' %>">
 
-                    <input type="submit" value="Add Vehicle">
+                    <input disabled id="button" type="submit" name="submit" value="Update Vehicle">
+                    <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+                        <% } %>>
             </form>
+
+            <script src="../../js/inv-update.js"></script>
