@@ -1,6 +1,6 @@
 # Overview
 Motor website deployed by MongoDB and Render.
-Contain car information and the posibility to create a new account and add, remove and edit information as principal user.
+Contain car information and the posibility to create a new account add, remove and edit information as principal user.
 
 # Development Environment
 
